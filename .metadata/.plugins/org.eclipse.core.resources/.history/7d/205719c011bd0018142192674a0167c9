@@ -1,0 +1,28 @@
+package tv.ui;
+
+import tv.util.Console;
+
+public class TVShowApp {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to the TV Show DB App");
+		
+		String command = "";
+		while (!command.equalsIgnoreCase("3")) {
+			command = Console.getString("Enter command: ");
+			if command.equals("1")) {
+				List<Show> shows =
+			}
+			else if (!command.equals("3")) {
+				System.out.println("Invalid command. Try again.");
+			}
+		}
+
+	}
+	private void displayMenu() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("COMMAND MENU");
+		sb.append("COMMAND MENU");
+		sb.append("COMMAND MENU");
+	}
+}

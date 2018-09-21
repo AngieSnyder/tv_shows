@@ -1,0 +1,37 @@
+package tv.ui;
+
+import java.util.List;
+
+import tv.business.Show;
+import tv.business.ShowDB;
+import tv.util.Console;
+
+public class TVShowApp {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to the TV Show DB App");
+		ShowDB showDB = new ShowDB();
+		String command = "";
+		while (!command.equalsIgnoreCase("3")) {
+			displayMenu()
+			command = Console.getString("Enter command: ");
+			if (command.equals("1")) {
+				List<Show> shows = showDB.getAll();
+				for(Show s : shows) {
+					System.out.println(s);
+				}
+			}
+			else if (!command.equals("3")) {
+				System.out.println("Invalid command. Try again.");
+			}
+		}
+		System.out.println("Bye");
+
+	}
+	private void static displayMenu() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("COMMAND MENU");
+		sb.append("1- List TVShows");
+		sb.append("3- Exit Program");
+	}
+}
