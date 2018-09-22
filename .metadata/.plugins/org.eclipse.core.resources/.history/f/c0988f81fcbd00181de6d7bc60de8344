@@ -105,7 +105,6 @@ public class ShowDB implements ShowDAO {
 				        } catch (SQLException e) {
 				            System.err.println(e);
 		return false;
-				        }
 	}
 
 	@Override

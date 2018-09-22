@@ -10,6 +10,7 @@ public class Show {
 	
 	
 	public Show(int id, String name, String rating, int length, String genre, String network) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.rating = rating;
@@ -21,6 +22,7 @@ public class Show {
 
 
 	public Show(String name, String rating, int length, String genre, String network) {
+		super();
 		this.name = name;
 		this.rating = rating;
 		this.length = length;

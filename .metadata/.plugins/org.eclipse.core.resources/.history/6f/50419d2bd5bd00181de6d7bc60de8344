@@ -91,21 +91,8 @@ public class ShowDB implements ShowDAO {
 // the below methods are not going to be implemented at this time.
 	@Override
 	public boolean add(Show s) {
-		String sql = "INSERT INTO TVShow (name, rating, length, genre, network) "
-					+"VALUES (?,?,?,?,?)";
-					try (Connection connection = getConnection();
-				             PreparedStatement ps = connection.prepareStatement(sql)) {
-				            ps.setString(1, s.getName());
-							ps.setString(2,s.getRating());
-				            ps.setInt(3, s.getLength());
-				            ps.setString(4, s.getGenre());
-				            ps.setString(5, s.getNetwork());
-				            ps.executeUpdate();
-				            return true;
-				        } catch (SQLException e) {
-				            System.err.println(e);
+		System.out.println("Not yet implemented");
 		return false;
-				        }
 	}
 
 	@Override

@@ -8,7 +8,7 @@ import tv.business.ShowDB;
 import tv.util.Console;
 
 public class TVShowApp {
-	private static ShowDB showDB = new ShowDB();
+
 	public static void main(String[] args) {
 		System.out.println("Welcome to the TV Show DB App\n");
 				

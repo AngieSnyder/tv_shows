@@ -8,7 +8,7 @@ import tv.business.ShowDB;
 import tv.util.Console;
 
 public class TVShowApp {
-	private static ShowDB showDB = new ShowDB();
+
 	public static void main(String[] args) {
 		System.out.println("Welcome to the TV Show DB App\n");
 				
@@ -47,17 +47,17 @@ public class TVShowApp {
 			else if (command.equals("3")) {
 				String name = Console.getString("Enter TV Show name: ");
 		        String rating = Console.getString("Enter show rating: ");
-		        int length = Console.getInt("Enter show length: ");
+		        int length = Console.getString("Enter show length: ");
 		        String genre = Console.getString("Enter show genre: ");
 		        String network = Console.getString("Enter show network: ");
 		        		
 		        
-		        Show show = new Show(name, rating, length, genre, network);
+		        ShowDB showDB = new ShowDB(name, rating, length, genre, network);
 		        
 
-		        boolean success = showDB.add(show);
+		        boolean success = productDB.add(product);
 		        if (success) {
-		            System.out.println(name
+		            System.out.println(description
 		                    + " has been added to the database.\n");
 		        } else {
 		            System.out.println("Error! Unable to add product.\n");

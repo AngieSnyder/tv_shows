@@ -8,13 +8,14 @@ import tv.business.ShowDB;
 import tv.util.Console;
 
 public class TVShowApp {
-	private static ShowDB showDB = new ShowDB();
+
 	public static void main(String[] args) {
-		System.out.println("Welcome to the TV Show DB App\n");
-				
+		System.out.println("Welcome to the TV Show DB App");
+		System.out.println();
+		
 		ShowDB showDB = new ShowDB();
 		String command = "";
-		while (!command.equalsIgnoreCase("6")) {
+		while (!command.equalsIgnoreCase("3")) {
 			displayMenu();
 			command = Console.getString("Enter command: ");
 			System.out.println();
@@ -44,27 +45,7 @@ public class TVShowApp {
 				}
 				System.out.println();
 			}
-			else if (command.equals("3")) {
-				String name = Console.getString("Enter TV Show name: ");
-		        String rating = Console.getString("Enter show rating: ");
-		        int length = Console.getInt("Enter show length: ");
-		        String genre = Console.getString("Enter show genre: ");
-		        String network = Console.getString("Enter show network: ");
-		        		
-		        
-		        Show show = new Show(name, rating, length, genre, network);
-		        
-
-		        boolean success = showDB.add(show);
-		        if (success) {
-		            System.out.println(name
-		                    + " has been added to the database.\n");
-		        } else {
-		            System.out.println("Error! Unable to add product.\n");
-		        }
-		    }
-			
-			else if (!command.equals("6")) {
+			else if (!command.equals("3")) {
 				System.out.println("Invalid command. Try again.");
 			}
 		}
