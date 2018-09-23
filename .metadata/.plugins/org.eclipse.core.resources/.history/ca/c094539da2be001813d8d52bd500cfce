@@ -68,14 +68,14 @@ public class TVShowApp {
 			
 			
 			else if (command.equals("5")) {
-				// delete show
+				// remove show
 				String name = Console.getString("Enter name of show to delete: ");
-		        Show show = (Show) showDB.get(name);
-		        if (showDB.delete(show)) {
-		        	System.out.println(show.getName() + " has been deleted from the database.\n");
+		        Show s = show.get(name);
+		        if (show.remove(s)) {
+		        	System.out.println(s.getName() + " has been removed from the database.\n");
 		        }		        
 		        else {
-		            System.out.println("Error! Unable to delete show.\n");
+		            System.out.println("Error! Unable to remove show.\n");
 		        }
 		    }
 		
@@ -94,7 +94,7 @@ public class TVShowApp {
 		sb.append("2- View TV Shows by Genre or Length \n");
 		sb.append("3- Add TV Show \n");
 	//	sb.append("4- Edit TV Show \n");
-		sb.append("5- Delete TV Show \n");
+	//	sb.append("5- Delete TV Show \n");
 		sb.append("6- Exit Program \n");
 		System.out.println(sb);
 	}

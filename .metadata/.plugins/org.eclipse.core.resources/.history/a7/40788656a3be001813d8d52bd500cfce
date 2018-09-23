@@ -68,14 +68,14 @@ public class TVShowApp {
 			
 			
 			else if (command.equals("5")) {
-				// delete show
+				// remove show
 				String name = Console.getString("Enter name of show to delete: ");
 		        Show show = (Show) showDB.get(name);
-		        if (showDB.delete(show)) {
-		        	System.out.println(show.getName() + " has been deleted from the database.\n");
+		        if (showDB.remove(show)) {
+		        	System.out.println(show.getName() + " has been removed from the database.\n");
 		        }		        
 		        else {
-		            System.out.println("Error! Unable to delete show.\n");
+		            System.out.println("Error! Unable to remove show.\n");
 		        }
 		    }
 		

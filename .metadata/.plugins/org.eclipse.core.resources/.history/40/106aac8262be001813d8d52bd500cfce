@@ -62,23 +62,27 @@ public class TVShowApp {
 		            System.out.println(name
 		                    + " has been added to the database.\n");
 		        } else {
-		            System.out.println("Error! Unable to add show.\n");
+		            System.out.println("Error! Unable to add product.\n");
 		        }
 		    }
-			
-			
-			else if (command.equals("5")) {
-				// delete show
+		/*	else if (command.equals("4")) {
+				// remove show
 				String name = Console.getString("Enter name of show to delete: ");
-		        Show show = (Show) showDB.get(name);
-		        if (showDB.delete(show)) {
-		        	System.out.println(show.getName() + " has been deleted from the database.\n");
-		        }		        
-		        else {
-		            System.out.println("Error! Unable to delete show.\n");
+		        
+		         		
+		        
+		        Show show = new Show(name, rating, length, genre, network);
+		        
+
+		        boolean success = showDB.add(show);
+		        if (success) {
+		            System.out.println(name
+		                    + " has been added to the database.\n");
+		        } else {
+		            System.out.println("Error! Unable to add product.\n");
 		        }
 		    }
-		
+		*/
 			
 			else if (!command.equals("6")) {
 				System.out.println("Invalid command. Try again.");
@@ -91,10 +95,10 @@ public class TVShowApp {
 		StringBuilder sb = new StringBuilder();
 		sb.append("COMMAND MENU \n");
 		sb.append("1- List TV Shows \n");
-		sb.append("2- View TV Shows by Genre or Length \n");
+		sb.append("2- List TV Shows by Genre or Length \n");
 		sb.append("3- Add TV Show \n");
 	//	sb.append("4- Edit TV Show \n");
-		sb.append("5- Delete TV Show \n");
+	//	sb.append("5- Delete TV Show \n");
 		sb.append("6- Exit Program \n");
 		System.out.println(sb);
 	}

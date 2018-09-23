@@ -88,24 +88,26 @@ public class ShowDB implements ShowDAO {
 		return shows;
 	}
 
+// the below methods are not going to be implemented at this time.
 	@Override
 	public boolean add(Show s) {
-		String sql = "INSERT INTO TVShow (name, rating, length, genre, network) " + "VALUES (?,?,?,?,?)";
-		try (Connection connection = getConnection(); PreparedStatement ps = connection.prepareStatement(sql)) {
-			ps.setString(1, s.getName());
-			ps.setString(2, s.getRating());
-			ps.setInt(3, s.getLength());
-			ps.setString(4, s.getGenre());
-			ps.setString(5, s.getNetwork());
-			ps.executeUpdate();
-			return true;
-		} catch (SQLException e) {
-			System.err.println(e);
-			return false;
-		}
+		String sql = "INSERT INTO TVShow (name, rating, length, genre, network) "
+					+"VALUES (?,?,?,?,?)";
+					try (Connection connection = getConnection();
+				             PreparedStatement ps = connection.prepareStatement(sql)) {
+				            ps.setString(1, s.getName());
+							ps.setString(2,s.getRating());
+				            ps.setInt(3, s.getLength());
+				            ps.setString(4, s.getGenre());
+				            ps.setString(5, s.getNetwork());
+				            ps.executeUpdate();
+				            return true;
+				        } catch (SQLException e) {
+				            System.err.println(e);
+		return false;
+				        }
 	}
 
-	// the below method is not going to be implemented at this time.
 	@Override
 	public boolean update(Show s) {
 		System.out.println("Not yet implemented");
@@ -114,15 +116,17 @@ public class ShowDB implements ShowDAO {
 
 	@Override
 	public boolean delete(Show s) {
-		String sql = "DELETE FROM TVShow " + "WHERE ShowName = ?";
-		try (Connection connection = getConnection(); PreparedStatement ps = connection.prepareStatement(sql)) {
-			ps.setString(1, s.getName());
-			ps.executeUpdate();
-			return true;
-		} catch (SQLException e) {
-			System.err.println(e);
-			return false;
-		}
+		String sql = "DELETE FROM TVShow "
+					+ "WHERE ShowName = ?";
+		try (Connection connection = getConnection();
+	             PreparedStatement ps = connection.prepareStatement(sql)) {
+	            ps.setString(1, s.getName());
+	            ps.executeUpdate();
+	            return true;
+	        } catch (SQLException e) {
+	            System.err.println(e);
+		return false;
+	}
 
 	}
 }
